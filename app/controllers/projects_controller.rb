@@ -4,7 +4,16 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    render plain: params[:project].inspect
+    @project = Project.new(project_params)
+
+    @project.save
+    redirect_to @project
   end
+
+private
   
+  def project_params
+    params.require(:project).permit(:picture, :name, :predescription, :description, :characteristic, :price)
+  end
+
 end
