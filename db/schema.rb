@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_16_123141) do
+ActiveRecord::Schema.define(version: 2020_01_17_163703) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.binary "picture"
+    t.string "name"
+    t.text "predescription"
+    t.text "description"
+    t.text "characteristic"
+    t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
