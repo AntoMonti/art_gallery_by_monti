@@ -5,7 +5,8 @@
 <%= project.predescription %>
 <%= project.description %>
 <%= project.characteristic %>
-<%= project.price %>
-<hr/>
-
+<%= project.price %> |
+<%= link_to 'Edit', edit_project_path(project) %> | 
+<%= link_to 'Destroy', project_path(project), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+<br>
 <% end %>
