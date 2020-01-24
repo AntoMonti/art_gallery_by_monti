@@ -1,6 +1,6 @@
 <% @projects.each do |project| %>
 
-<%= image_tag(project.picture) %>
+<%= link_to image_tag(project.picture), project_path(project) %>
 <%= project.name %>
 <%= project.predescription %>
 <%= project.description %>
