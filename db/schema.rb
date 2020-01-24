@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_082526) do
+ActiveRecord::Schema.define(version: 2020_01_24_083405) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_082526) do
     t.string "username"
     t.index ["email"], name: "index_artists_on_email", unique: true
     t.index ["reset_password_token"], name: "index_artists_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_artists_on_username", unique: true
   end
 
   create_table "contacts", force: :cascade do |t|
