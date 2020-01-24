@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create] 
+  before_action :authenticate_artist!, :only => [:new, :create] 
 
   def index
     @projects = Project.all
