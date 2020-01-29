@@ -19,9 +19,12 @@
           <li class="nav-item px-lg-4">
             <%= link_to "Contact", new_contacts_path, class: "nav-link text-uppercase text-expanded" %>
           </li>
-          <li class="nav-item px-lg-4">
-            <%= link_to "Create Project", new_project_path, class: "nav-link text-uppercase text-expanded" %>
-          </li>
+          <% if artist_signed_in? %>
+            <li class="nav-item px-lg-4">
+              <%= link_to "Create Project", new_project_path, class: "nav-link text-uppercase text-expanded" %>
+            </li>
+          <% else %>
+          <% end %>
         </ul>
       </div>
     </div>
