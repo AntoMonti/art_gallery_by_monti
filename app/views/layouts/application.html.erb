@@ -10,13 +10,17 @@
   </head>
 
   <body>
-    <% if artist_signed_in? %>
-      Hello, <%= current_artist.username %> | <%= link_to 'Sign out', destroy_artist_session_path, method: :delete %> 
-    <% else %>
-      <%= link_to 'Sign in', new_artist_session_path %>
-    <% end %>  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <!-- Devise identifed system -->
+    <div class="container">
+        <% if artist_signed_in? %>
+          <span class="text-color-head">Hello, <%= current_artist.username %></span> | <%= link_to 'Sign out', destroy_artist_session_path, method: :delete %> 
+        <% else %>
+          <%= link_to 'Sign in', new_artist_session_path %>
+        <% end %>  
+        <span class="text-color-body"><p class="notice"><%= notice %></p></span>
+        <span class="text-color-body"><p class="alert"><%= alert %></p></span>
+    </div>
 
     <!-- Header -->
     <%= render 'layouts/header' %>
