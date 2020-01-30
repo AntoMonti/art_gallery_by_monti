@@ -19,9 +19,12 @@
         	</h2>
           </div>
         </div>
-        <%= link_to 'Back', projects_path, class: "btn btn-info" %>
-		<%= link_to 'Edit', edit_project_path(@project), class: "btn btn-warning" %> 
-		<%= link_to 'Destroy', project_path(@project), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          <%= link_to 'Back', projects_path, class: "btn btn-info" %>
+          <% if artist_signed_in? %>
+  		    <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-warning" %> 
+  		    <%= link_to 'Destroy', project_path(@project), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          <% else %>
+          <% end %>
       	</div>
     </div>
   </section>
